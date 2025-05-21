@@ -1,4 +1,4 @@
-<img src="zdjecia/ProjektTytul.png" width="830" height="150">
+<img src="zdjecia/ProjektTytul.png" width="830" height="42">
 
 # 1. Informacje ogólne
 * **Tytuł projektu:**
@@ -48,8 +48,8 @@ Głównym celem strony jest ułatwienie pacjentom znalezienia informacji o gabin
 ```
 
 # 6. Zrzuty ekranu
-<img src="zdjecia/Index.PNG" width="830" height="500">
-<img src="zdjecia/Form.PNG" width="830" height="500">
-<img src="zdjecia/ONas.PNG" width="830" height="500">
-<img src="zdjecia/Cennik.PNG" width="830" height="500">
-<img src="zdjecia/Kontakt.PNG" width="830" height="500">
+<img src="zdjecia/Index.PNG" width="830" height="398">
+<img src="zdjecia/Form.PNG" width="830" height="398">
+<img src="zdjecia/ONas.PNG" width="830" height="397">
+<img src="zdjecia/Cennik.PNG" width="830" height="397">
+<img src="zdjecia/Kontakt.PNG" width="830" height="398">
