@@ -48,8 +48,8 @@ Głównym celem strony jest ułatwienie pacjentom znalezienia informacji o gabin
 ```
 
 # 6. Zrzuty ekranu
-<img src="zdjecia/Index.PNG" width="276.6666666666667" height="250">
-<img src="zdjecia/Form.PNG" width="276.6666666666667" height="250">
-<img src="zdjecia/ONas.PNG" width="276.6666666666667" height="250">
-<img src="zdjecia/Cennik.PNG" width="415" height="300">
-<img src="zdjecia/Kontakt.PNG" width="415" height="300">
+<img src="zdjecia/Index.PNG" width="830" height="500">
+<img src="zdjecia/Form.PNG" width="830" height="500">
+<img src="zdjecia/ONas.PNG" width="830" height="500">
+<img src="zdjecia/Cennik.PNG" width="830" height="500">
+<img src="zdjecia/Kontakt.PNG" width="830" height="500">
