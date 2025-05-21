@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cennik.css">
+    <title>Stomatolog - Cennik</title>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="topnav">
+        <a href="index.html" id="logo"><img src="zdjecia/logo-ikona.png" alt="logo Stomatolog"></a>
+        <a href="kontakt.html">Kontakt</a>
+        <a class="active" href="cennik.html">Cennik</a>
+        <a href="o-nas.html">O Nas</a>
+        <a href="Form.html">Umów się na wizytę</a>
+        <a href="index.html">Strona Główna</a>
+    </nav>
+    <header>
+        <h1>Cennik</h1>
+    </header>
+    <main>
+        <!-- Przyciski -->
+        <button class="collapsible">
+            <p>Konsultacja <span>100 zł</span></p>
+        </button>
+        <div class="content">
+            <p>Na pierwszej wizycie przeprowadzamy szczegółowy wywiad, badanie zewnątrz i wewnątrz ustne i wykonujemy
+                komplet niezbędnych badań RTG.</p>
+        </div>
+
+        <button class="collapsible">
+            <p>Ekstrakcja zęba <span>250 zł</span></p>
+        </button>
+        <div class="content">
+            <p>Zabieg polega na podaniu miejscowego znieczulenia, delikatnym luzowaniu zęba i jego usunięciu przy użyciu
+                specjalistycznych narzędzi.</p>
+        </div>
+
+        <button class="collapsible">
+            <p>Endodoncja <span>500 zł</span></p>
+        </button>
+        <div class="content">
+            <p>Leczenie kanałowe, czy inaczej endodontyczne, polega na usunięciu miazgi z kanałów, wykonania ich
+                dezynfekcji, następnie szczelnym wypełnieniu kanałów.</p>
+        </div>
+
+        <button class="collapsible">
+            <p>Wybielanie zębów <span>750 zł</span></p>
+        </button>
+        <div class="content">
+            <p>Zabieg polega na nałożeniu specjalnego preparatu na powierzchnię zębów i następnie aktywowaniu go przy
+                użyciu lasera.</p>
+        </div>
+    </main>
+    <!-- Skrypt przyciski -->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                }
+                else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <!-- Stopka -->
+    <footer>
+        <img src="zdjecia/facebook-icon-white.png" alt="Stomatolog Facebook" target="_blank" title="Stomatolog Facebook"
+            id="facebook">
+        <a id="facebook" href="https://www.facebook.com/Uniwersytet.Morski.w.Gdyni/"></a>
+        </img>
+        <span>mail: <a href="mailto:email:stomatolog@wp.pl"> stomatolog@wp.pl</a></span>
+        <span>Kontakt telefoniczny: <a href="tel:+48 532 453 321"> +48 532 453 321</a></span>
+        <span>Godziny otwarcia: Poniedziałek - Piątek: 09:00 - 20:00</span>
+        <span>Adres: ul. Morska 81-87, 81-225 Gdynia</span>
+    </footer>
+</body>
+
+</html>

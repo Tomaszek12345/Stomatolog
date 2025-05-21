@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Form.css">
+    <title>Stomatolog - Formularz</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="topnav">
+        <a href="index.html" id="logo"><img src="zdjecia/logo-ikona.png" alt="logo Stomatolog"></a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="cennik.html">Cennik</a>
+        <a href="o-nas.html">O Nas</a>
+        <a class="active" href="Form.html">Umów się na wizytę</a>
+        <a href="index.html">Strona Główna</a>
+    </nav>
+    <header>
+        <!-- Form -->
+        <h1>Umów się na wizytę</h1>
+        <div class="form-container">
+            <form action="przeniesienie.php" method="POST" enctype="multipart/form-data">
+                <label for="imie">Imię <span id="gwiazdka">*</span></label><br>
+                <input type="text" id="imie" placeholder="Imię" minlength="3" maxlength="25" name="imie"
+                    required><br><br>
+
+                <label for="nazwisko">Nazwisko <span id="gwiazdka">*</span></label><br>
+                <input type="text" id="nazwisko" placeholder="Nazwisko" minlength="2" maxlength="25" name="nazwisko"
+                    required><br><br>
+
+                <label for="email">E-mail <span id="gwiazdka">*</span></label><br>
+                <input type="email" id="email" placeholder="Adres e-mail" name="email" required><br><br>
+
+                <label for="telefon">Nr telefonu <span id="gwiazdka">*</span></label><br>
+                <input type="tel" id="telefon" placeholder="123456789" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" name="telefon"
+                    required maxlength="9"><br><br>
+
+                <label for="data">Data wizyty <span id="gwiazdka">*</span></label><br>
+                <input type="datetime-local" id="dataWizyty" name="dataWizyty" onkeydown="return false;"
+                    onpaste="return false;" required><br><br>
+
+                <label for="rodzajzabiegu">Rodzaj zabiegu <span id="gwiazdka">*</span></label><br>
+                <select id="rodzajZabiegu" name="rodzajZabiegu" required>
+                    <option value="konsultacja">konsultacja</option>
+                    <option value="ekstrakcjazeba">ekstrakcja zęba</option>
+                    <option value="endodoncja">endodoncja</option>
+                    <option value="wybielaniezebow">wybielanie zębów</option>
+                </select><br><br>
+
+                <label for="komentarz">Dodatkowe uwagi:</label><br>
+                <textarea id="komentarz" rows="5" cols="40" name="komentarz" placeholder="Uwagi"
+                    maxlength="320"></textarea><br>
+
+                <label for="checkbox" id="checkboxZapoznanielabel">
+                    <input type="checkbox" name="checkbox" id="checkbox" required>
+                    <span id="gwiazdka">*</span> Potwierdzam zapoznanie się z polityką prywatnośc i wyrażam dobrowolną
+                    zgodę na przetwarzanie moich danych osobowych w celu umówienia wizyty.</label><br><br>
+
+                <!-- Przyciski -->
+                <input type="submit" id="submit">
+                <input type="reset" id="reset"><br><br>
+            </form>
+        </div>
+    </header>
+    <!-- Stopka -->
+    <footer>
+        <img src="zdjecia/facebook-icon-white.png" alt="Stomatolog Facebook" target="_blank" title="Stomatolog Facebook"
+            id="facebook">
+        <a id="facebook" href="https://www.facebook.com/Uniwersytet.Morski.w.Gdyni/"></a>
+        </img>
+        <span>mail: <a href="mailto:email:stomatolog@wp.pl"> stomatolog@wp.pl</a></span>
+        <span>Kontakt telefoniczny: <a href="tel:+48 532 453 321"> +48 532 453 321</a></span>
+        <span>Godziny otwarcia: Poniedziałek - Piątek: 09:00 - 20:00</span>
+        <span>Adres: ul. Morska 81-87, 81-225 Gdynia</span>
+    </footer>
+    <!-- Skrypt daty -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.getElementById('dataWizyty');
+
+            // pobieranie teraz i wyzerowanie sekund
+            const now = new Date();
+            now.setSeconds(0, 0);
+
+            // 1h od teraz - min
+            const oneHourLater = new Date(now.getTime() + 60 * 60 * 1000);
+
+            // 3 lata od teraz - max
+            const yearLater = new Date(now);
+            yearLater.setFullYear(now.getFullYear() + 3);
+
+            // format na YYYY-MM-DDThh:mm
+            const pad = n => n.toString().padStart(2, '0');
+            function fmt(d) {
+                return d.getFullYear() + '-' +
+                    pad(d.getMonth() + 1) + '-' +
+                    pad(d.getDate()) +
+                    'T' +
+                    pad(d.getHours()) + ':' +
+                    pad(d.getMinutes());
+            }
+
+            input.min = fmt(oneHourLater);
+            input.max = fmt(yearLater);
+
+            // ustawienie wartości początkowej na min
+            input.value = fmt(oneHourLater);
+        });
+    </script>
+</body>
+
+</html>

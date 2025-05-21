@@ -1,0 +1,164 @@
+/* Topnav */
+.topnav {
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    float: right;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: lightblue;
+    color: black;
+}
+
+.topnav img {
+    width: 50px;
+    position: absolute;
+}
+
+#logo {
+    all: initial;
+    cursor: pointer;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 25px;
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    padding-bottom: 6.74rem;
+    box-sizing: inherit;
+}
+
+header h1 {
+    font-size: 50px;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+main span {
+    float: right;
+}
+
+/* Buttony */
+button p {
+    margin: 0;
+}
+
+.collapsible {
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 22px;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    font-size: 20px;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+/* Stopka */
+footer {
+    clear: both;
+    width: 100%;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333333;
+    overflow: hidden;
+}
+
+footer span {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    float: right;
+}
+
+footer a {
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    float: right;
+}
+
+footer #facebook {
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    float: left;
+    padding: 3px 0px 0px 5px;
+}
+
+/* Telefon */
+@media (max-width: 800px) {
+    .topnav a {
+        font-size: 20px;
+        padding: 24px 25px;
+    }
+
+    .topnav img {
+        height: 71px;
+        width: 71px;
+    }
+
+    header h1 {
+        font-size: 60px;
+    }
+
+    main {
+        height: 100%;
+        width: 100%;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    main span {
+        margin-right: 20%;
+        float: right;
+    }
+}

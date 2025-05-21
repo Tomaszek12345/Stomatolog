@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Stomatolog</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="topnav">
+        <a href="index.html" id="logo"><img src="zdjecia/logo-ikona.png" alt="logo Stomatolog"></a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="cennik.html">Cennik</a>
+        <a href="o-nas.html">O Nas</a>
+        <a href="Form.html">Umów się na wizytę</a>
+        <a class="active" href="index.html">Strona Główna</a>
+    </nav>
+    <header>
+        <h1>Witamy na stronie kliniki stomatologicznej</h1>
+        <img src="zdjecia/foto1.jpg" alt="foto1" id="zdjecia">
+        <img src="zdjecia/foto2.jpg" alt="foto2" id="zdjecia">
+        <img src="zdjecia/foto3.jpg" alt="foto3" id="zdjecia">
+        <h2>Dostępne usługi</h2>
+    </header>
+    <!-- Dostępne usługi -->
+    <div class="pseudo-button-container">
+        <div class="button-wrapper">
+            <input type="checkbox" id="toggle1">
+            <label class="pseudo-button" for="toggle1">Ekstrakcja zęba</label>
+            <div class="hidden-text">
+                Zabieg polega na podaniu miejscowego znieczulenia, delikatnym luzowaniu zęba i jego usunięciu przy
+                użyciu specjalistycznych narzędzi.
+            </div>
+        </div>
+        <div class="button-wrapper">
+            <input type="checkbox" id="toggle2">
+            <label class="pseudo-button" for="toggle2">Wybielanie zębów</label>
+            <div class="hidden-text">
+                Zabieg polega na nałożeniu specjalnego preparatu na powierzchnię zębów i następnie aktywowaniu go przy
+                użyciu lasera.
+            </div>
+        </div>
+        <div class="button-wrapper">
+            <input type="checkbox" id="toggle3">
+            <label class="pseudo-button" for="toggle3">Endodencja</label>
+            <div class="hidden-text">
+                Leczenie kanałowe, czy inaczej endodontyczne, polega na usunięciu miazgi z kanałów, wykonania ich
+                dezynfekcji, następnie szczelnym wypełnieniu kanałów.
+            </div>
+        </div>
+    </div>
+    <!-- Linki -->
+    <div class="links-container">
+        <a href="Form.html" class="link-button">Umów się na wizytę</a>
+        <a href="kontakt.html" class="link-button">Kontakt do nas</a>
+    </div>
+    <!-- Slider przed/po -->
+    <div class="container">
+        <h3><br>Efekt wybielania zębów</h3>
+        <div class="ba-slider" id="baSlider">
+            <img src="zdjecia/wybielanie-zebow-przed.jpg" alt="Przed zabiegiem" class="before">
+            <div class="overlay" id="baOverlay">
+                <img src="zdjecia/wybielanie-zebow-po.jpg" alt="Po zabiegu">
+            </div>
+            <div class="handle" id="baHandle"></div>
+        </div>
+    </div>
+    <!-- Stopka -->
+    <footer>
+        <img src="zdjecia/facebook-icon-white.png" alt="Stomatolog Facebook" target="_blank" title="Stomatolog Facebook"
+            id="facebook">
+        <a id="facebook" href="https://www.facebook.com/Uniwersytet.Morski.w.Gdyni/"></a>
+        </img>
+        <span>mail: <a href="mailto:email:stomatolog@wp.pl"> stomatolog@wp.pl</a></span>
+        <span>Kontakt telefoniczny: <a href="tel:+48 532 453 321"> +48 532 453 321</a></span>
+        <span>Godziny otwarcia: Poniedziałek - Piątek: 09:00 - 20:00</span>
+        <span>Adres: ul. Morska 81-87, 81-225 Gdynia</span>
+    </footer>
+    <!-- Skrypt Slidera -->
+    <script>
+        (function () {
+            const slider = document.getElementById("baSlider");
+            const overlay = document.getElementById("baOverlay");
+            const handle = document.getElementById("baHandle");
+
+            // ustawianie slidera na środku
+            overlay.style.clipPath = 'inset(0 50% 0 0)';
+            handle.style.left = '50%';
+
+            // pobieranie pozycji x
+            function getPointerX(e) {
+                if (e.touches && e.touches.length) {
+                    return e.touches[0].clientX;
+                } else {
+                    return e.clientX;
+                }
+            }
+
+            function slide(e) {
+                const rect = slider.getBoundingClientRect();
+                const pointerX = getPointerX(e);
+                let x = pointerX - rect.left;
+                x = Math.max(0, Math.min(x, rect.width));
+
+                const pct = (x / rect.width) * 100;
+                overlay.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+                handle.style.left = `${pct}%`;
+            }
+
+            // Pc
+            slider.addEventListener("mousemove", slide);
+            // telefon
+            slider.addEventListener("touchstart", slide);
+            slider.addEventListener("touchmove", slide);
+
+            // brak przewijania strony podczas przesuwania slidera
+            slider.addEventListener("touchmove", e => e.preventDefault(), { passive: false });
+        })();
+    </script>
+</body>
+
+</html>
